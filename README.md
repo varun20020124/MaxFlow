@@ -29,23 +29,18 @@ MaxFlow lets network engineers and architects model any directed network, run a 
 
 ### High-Level Data Flow
 
-┌──────────────┐   POST /max-flow   ┌──────────────┐
-│  React App   │ ─────────────────▶ │ Spring Boot  │
-│  (Vis.js UI) │                   │  API         │
-└───┬──────────┘                   └───┬──────────┘
-    │    SSE stream (status)            │
-    ▼                                   ▼
-┌──────────────┐                 ┌──────────────┐
-│  WebSocket   │ optional live   │ Edmonds-Karp │
-│  progress    │ progress msgs   │  Solver      │
-└──────────────┘                 └──────────────┘
-         ▲                               │
-         │   INSERT run + results        ▼
-         │                         ┌──────────────┐
-         └────────────────────────▶│ PostgreSQL   │
-                                   │ (graphs &   │
-                                   │  run_stats) │
-                                   └──────────────┘
+```text
+      [ Next.js UI ]
+             │
+       POST /max-flow
+             ▼
+     [ Spring Boot API ]
+       (Edmonds–Karp)
+             │
+    INSERT run + results
+             ▼
+       [ PostgreSQL ]
+  (graphs, flow_runs, bottlenecks)
 
 
 ### Component Breakdown
