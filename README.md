@@ -1,7 +1,5 @@
 # MaxFlow – Network Flow Analyser
 
-> A self-hosted “what-if” sandbox that computes maximum throughput between two nodes in any directed graph using the Edmonds–Karp algorithm.
-
 ---
 
 ## Description
