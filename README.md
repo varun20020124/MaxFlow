@@ -29,7 +29,7 @@ MaxFlow lets network engineers and architects model any directed network, run a 
 
 ### High-Level Data Flow
 
-```text
+
       [ Next.js UI ]
              │
        POST /max-flow
@@ -41,6 +41,7 @@ MaxFlow lets network engineers and architects model any directed network, run a 
              ▼
        [ PostgreSQL ]
   (graphs, flow_runs, bottlenecks)
+
 
 
 ### Component Breakdown
