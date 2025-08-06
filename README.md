@@ -39,8 +39,8 @@ MaxFlow lets network engineers and architects model any directed network, run a 
              │
     INSERT run + results
              ▼
-       [ PostgreSQL ]
-  (graphs, flow_runs, bottlenecks)
+       [ PostgreSQL ] (graphs, flow_runs, bottlenecks)
+  
 
 
 
