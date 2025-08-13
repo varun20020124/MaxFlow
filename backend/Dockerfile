@@ -1,5 +1,5 @@
-# Placeholder backend Dockerfile
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY . .
-CMD ["echo", "Spring Boot backend placeholder"]
+RUN ./mvnw clean package -DskipTests
+CMD ["java", "-jar", "target/backend-0.0.1-SNAPSHOT.jar"]
