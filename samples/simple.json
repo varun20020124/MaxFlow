@@ -1,10 +1,10 @@
 {
   "nodes": ["A", "B", "C", "D"],
   "edges": [
-    { "from": "A", "to": "B", "capacity": 10 },
-    { "from": "A", "to": "C", "capacity": 15 },
-    { "from": "B", "to": "D", "capacity": 12 },
-    { "from": "C", "to": "D", "capacity": 10 },
-    { "from": "B", "to": "C", "capacity": 5 }
+    { "from": 0, "to": 1, "capacity": 10 },
+    { "from": 0, "to": 2, "capacity": 5 },
+    { "from": 1, "to": 2, "capacity": 15 },
+    { "from": 1, "to": 3, "capacity": 10 },
+    { "from": 2, "to": 3, "capacity": 10 }
   ]
 }

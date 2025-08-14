@@ -1,32 +1,29 @@
 package com.maxflow.model;
 
 public class Edge {
-    private String from;
-    private String to;
+    private int from;
+    private int to;
     private int capacity;
 
-    // Default constructor for JSON
-    public Edge() {}
-
-    public Edge(String from, String to, int capacity) {
+    public Edge(int from, int to, int capacity) {
         this.from = from;
         this.to = to;
         this.capacity = capacity;
     }
 
-    public String getFrom() {
+    public int getFrom() {
         return from;
     }
 
-    public void setFrom(String from) {
+    public void setFrom(int from) {
         this.from = from;
     }
 
-    public String getTo() {
+    public int getTo() {
         return to;
     }
 
-    public void setTo(String to) {
+    public void setTo(int to) {
         this.to = to;
     }
 
@@ -36,14 +33,5 @@ public class Edge {
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
-    }
-
-    @Override
-    public String toString() {
-        return "Edge{" +
-                "from='" + from + '\'' +
-                ", to='" + to + '\'' +
-                ", capacity=" + capacity +
-                '}';
     }
 }
