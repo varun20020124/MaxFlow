@@ -1,0 +1,10 @@
+{
+  "nodes": ["A", "B", "C", "D"],
+  "edges": [
+    { "from": "A", "to": "B", "capacity": 10 },
+    { "from": "A", "to": "C", "capacity": 15 },
+    { "from": "B", "to": "D", "capacity": 12 },
+    { "from": "C", "to": "D", "capacity": 10 },
+    { "from": "B", "to": "C", "capacity": 5 }
+  ]
+}

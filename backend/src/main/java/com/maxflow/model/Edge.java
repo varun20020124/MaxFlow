@@ -1,22 +1,49 @@
 package com.maxflow.model;
-public class Edge{
-    private int from; // start node
-    private int to; // end node
-    private int capacity; // max capacity of this edge
-    private int flow; // current flow on this edge
 
-    public Edge(int from, int to, int capacity){
+public class Edge {
+    private String from;
+    private String to;
+    private int capacity;
+
+    // Default constructor for JSON
+    public Edge() {}
+
+    public Edge(String from, String to, int capacity) {
         this.from = from;
         this.to = to;
         this.capacity = capacity;
-        this.flow = 0; // intially no flow
     }
 
-    // Getters & Setters
-    public int getFrom() { return from; }
-    public int getTo() { return to; }
-    public int getCapacity() { return capacity; }
-    public int getFlow() { return flow; }
+    public String getFrom() {
+        return from;
+    }
 
-    public void setFlow(int flow) { this.flow = flow; }
+    public void setFrom(String from) {
+        this.from = from;
+    }
+
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    @Override
+    public String toString() {
+        return "Edge{" +
+                "from='" + from + '\'' +
+                ", to='" + to + '\'' +
+                ", capacity=" + capacity +
+                '}';
+    }
 }

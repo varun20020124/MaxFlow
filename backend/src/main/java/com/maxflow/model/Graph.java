@@ -4,19 +4,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Graph {
-    private int numVertices;
+    private List<String> nodes;
     private List<Edge> edges;
 
-    public Graph(int numVertices) {
-        this.numVertices = numVertices;
+    // Default constructor (needed for JSON deserialization)
+    public Graph() {
+        this.nodes = new ArrayList<>();
         this.edges = new ArrayList<>();
     }
 
-    public void addEdge(int from, int to, int capacity) {
-        edges.add(new Edge(from, to, capacity));
+    public Graph(List<String> nodes, List<Edge> edges) {
+        this.nodes = nodes;
+        this.edges = edges;
     }
 
-    // Getters
-    public int getNumVertices() { return numVertices; }
-    public List<Edge> getEdges() { return edges; }
+    public List<String> getNodes() {
+        return nodes;
     }
+
+    public void setNodes(List<String> nodes) {
+        this.nodes = nodes;
+    }
+
+    public List<Edge> getEdges() {
+        return edges;
+    }
+
+    public void setEdges(List<Edge> edges) {
+        this.edges = edges;
+    }
+
+    @Override
+    public String toString() {
+        return "Graph{" +
+                "nodes=" + nodes +
+                ", edges=" + edges +
+                '}';
+    }
+}
