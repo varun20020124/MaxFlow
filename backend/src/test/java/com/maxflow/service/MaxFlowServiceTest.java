@@ -2,6 +2,7 @@ package com.maxflow.service;
 
 import com.maxflow.model.Graph;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MaxFlowServiceTest {
@@ -20,9 +21,14 @@ public class MaxFlowServiceTest {
         graph.addEdge("B", "D", 10);
         graph.addEdge("C", "D", 10);
 
-        MaxFlowService maxFlowService = new MaxFlowService();
-        int maxFlow = maxFlowService.calculateMaxFlow(graph, 0, 3);
+        graph.setSource("A");
+        graph.setSink("D");
 
-        assertEquals(15, maxFlow, "Max flow should be 15");
+        MaxFlowService maxFlowService = new MaxFlowService();
+        MaxFlowService.MaxFlowResult result = maxFlowService.calculateMaxFlow(graph);
+
+        assertEquals(15, result.getMaxFlowValue(), "Max flow should be 15");
+        assertEquals(0, result.getSourceIndex(), "A should be index 0");
+        assertEquals(3, result.getSinkIndex(), "D should be index 3");
     }
 }
